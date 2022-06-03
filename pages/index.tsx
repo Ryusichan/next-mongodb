@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useCurrentUser } from "../hooks/index";
 
 export default function IndexPage() {
-  const [user] = useCurrentUser();
+  const [user, { mutate }] = useCurrentUser();
   const handleLogout = async () => {
     await fetch("/api/auth", {
       method: "DELETE",
